@@ -35,3 +35,4 @@ sleep 10
 
 lspci -nnk | grep -iE "(usb 3|amd)" |& tee ~/Desktop/gpu-id.log
 echo "quiet splash amd_iommu=on kvm.ignore_msrs=1 vfio_pci.ids=09:00.0,09:00.0 vfio_iommu_type1.allow_unsafe_interrupts=1 rd.driver.pre=vfio-pci" > grub.text
+# replace vfio_pci.ids with your gpu ids
