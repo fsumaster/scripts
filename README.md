@@ -26,7 +26,6 @@ Prerequisites: A pc running ubuntu base OS
 
 
 - __*Windows hardening script*__
-- 
 Description: This allows you to remove/add features back to your OS and harden the base installation of windows to your liking. Uncomment lines you'd like to take effect, Comment for lines you want to keep.
 
 Prerequisites: You need to have a administrator account
