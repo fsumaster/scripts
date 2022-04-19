@@ -1,7 +1,7 @@
 #!/bin/bash
 #Script for my perfect Ubuntu setup v1.1
 echo #############################################################
-echo #             FSUMASTER - setup script - v1.2               #
+echo #             FSUMASTER - setup script - v1.3               #
 echo #             tested on ubuntu 16.04-21.04 LTS              #
 echo #                                                           #
 echo #                                                           #
@@ -10,7 +10,7 @@ echo         #"free your mind and your ass will follow"#
 
 sudo apt-get update
 echo #swervin - installing apps#
-sudo apt-get install git bleachbit gufw p7zip-rar p7zip-full unace unrar zip unzip sharutils rar uudeview mpack arj cabextract file-roller
+sudo apt-get install git bleachbit gufw p7zip-rar p7zip-full unace unrar zip unzip sharutils rar uudeview mpack arj cabextract file-roller gnome-shell-extension-dash-to-panel chrome-gnome-shell gnome-shell-extension-prefs gnome-tweaks ufw
 
 sudo ufw enable
 sudo ufw enable logging
