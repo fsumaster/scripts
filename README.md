@@ -1,29 +1,35 @@
-<center><b>Setup Scripts</b>
+## Readme.md
 
-<i><u>qemu-setup: This is for gpu passthrough</i></u></center> 
+> This is a collection of misc scripts I use for various tasks, fresh installs,  and QOL
 
-<b>Prerequisites are a cpu and motherboard that allows iommu, two gpu's (1 for host 1 for guest to passthrough)</b>
 
-chmod +x qemu-setup.sh<br>
-./qemu-setup.sh<br>
-run this script and grab your gpu id's from the setup script output "gpu-id.log" and you'll need to save those id's and add that to your grub.
+**Setup Scripts**
 
-<br>
-<br>
+- __*qemu-setup: This is for gpu passthrough*__
+Description: This script is designed for qemu/virt manager on ubuntu running 2 gpus. It checks for updates and updates if needed, It installs required packages, adds your current user to kvm & libvirt groups, clones [pavolelsigs gpu passthrough script (credit to him)](http://https://github.com/pavolelsig/passthrough_helper_ubuntu_20.git "pavolelsig's gpu passthrough script") and runs the install.
 
-<center><i><u>ubuntu_setup: This is for fresh install for ubuntu</i></u></center>
+Prerequisites: A cpu, motherboard that allows iommu, two gpu's (1 for host 1 for guest to passthrough) running ubuntu base OS 
 
-Prerequisites are a pc running ubuntu
+> chmod +x qemu-setup.sh
+./qemu-setup.sh
 
-chmod +x ubuntu_setup.sh <br>
-./ubuntu_setup.sh <br>
-run this script and you're all set.
 
-<br>
-<br>
 
-<center><i><u>Windows hardening script: This allows you to remove/add features back to you OS</i></u></center>
+-  __*ubuntu_setup: This is for fresh install for ubuntu*__
+Description: A simple installer script I use for fresh installing ubuntu to my liking.
 
-<b> Prerequisites: You need to have a administrator account</b>
+Prerequisites: A pc running ubuntu base OS
 
-comment to keep, uncomment to remove. Run powershell as admin
+> chmod +x ubuntu_setup.sh
+./ubuntu_setup.sh./ubuntu_setup.sh
+
+
+
+- __*Windows hardening script*__
+Description: This allows you to remove/add features back to your OS and harden the base installation of windows to your liking. Uncomment lines you'd like to take effect, Comment for lines you want to keep.
+
+Prerequisites: You need to have a administrator account
+
+> Run Windows PowerShell ISE as admin and edit the script to your liking and execute.
+
+
