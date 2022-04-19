@@ -1,15 +1,11 @@
 #!/bin/bash
 #Virt-Manger qemu/kvm setup script for my desktop, Tested on ubuntu 21.04
-# @fsumaster - rev 0.1 8.11.21
+# @fsumaster - rev 0.2 4.19.22
 echo lets update first!
 sudo apt update && sudo apt upgrade -y
 
 echo lets get setup!
 
-# Setup arc menu & dash2dock for that win 11 feel lol.
-sudo apt install gnome-shell-extension-dash-to-panel chrome-gnome-shell gnome-shell-extension-prefs gnome-tweaks 
-echo dash2dock and arcmenu installed, check gnome extensions
-firefox -new-tab "https://extensions.gnome.org/"
 
 echo installing virt-manager
 sudo apt install -y qemu qemu-kvm libvirt-daemon libvirt-clients bridge-utils virt-manager
@@ -34,5 +30,5 @@ bash gpu_passthrough.sh
 sleep 10 
 
 lspci -nnk | grep -iE "(usb 3|amd)" |& tee ~/Desktop/gpu-id.log
-echo "quiet splash amd_iommu=on kvm.ignore_msrs=1 vfio_pci.ids=09:00.0,09:00.0 vfio_iommu_type1.allow_unsafe_interrupts=1 rd.driver.pre=vfio-pci" > grub.text
+echo "quiet splash amd_iommu=on kvm.ignore_msrs=1 iommu=pt kvm.ignore_msrs=1 vfio_iommu_type1.allow_unsafe_interrupts=1 rd.driver.pre=vfio-pci vfio-pci.ids=1002:67df,1002:aaf0" > grub.text
 # replace vfio_pci.ids with your gpu ids
