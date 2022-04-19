@@ -18,3 +18,12 @@ Prerequisites are a pc running ubuntu
 chmod +x ubuntu_setup.sh <br>
 ./ubuntu_setup.sh <br>
 run this script and you're all set.
+
+<br>
+<br>
+
+<center><i><u>Windows hardening script: This allows you to remove/add features back to you OS</i></u></center>
+
+<b> Prerequisites: You need to have a administrator account</b>
+
+comment to keep, uncomment to remove. Run powershell as admin
