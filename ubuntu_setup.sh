@@ -1,43 +1,34 @@
 #!/bin/bash
-#Script for my perfect Ubuntu setup v1.1
 echo #############################################################
-echo #             FSUMASTER - setup script - v1.3               #
-echo #             tested on ubuntu 16.04-21.04 LTS              #
+echo #          FSUMASTER - [Ubuntu]-setup script - v1.4         #
+echo #             tested on ubuntu 22.04 LTS                    #
 echo #                                                           #
 echo #                                                           #
 echo #############################################################
 echo         #"free your mind and your ass will follow"#
 
 sudo apt-get update
-echo #swervin - installing apps#
-sudo apt-get install git bleachbit gufw p7zip-rar p7zip-full unace unrar zip unzip sharutils rar uudeview mpack arj cabextract file-roller gnome-shell-extension-dash-to-panel chrome-gnome-shell gnome-shell-extension-prefs gnome-tweaks ufw
+echo Install packages
+sudo apt-get install git bleachbit gufw p7zip-rar p7zip-full unace unrar zip unzip sharutils rar uudeview mpack arj cabextract file-roller gnome-tweaks curl
 
+echo Setup and install brave browser
+sudo apt install curl
+sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
+echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
+sudo apt update
+sudo apt install brave-browser
+
+echo Setup and install protonvpn
+sudo add-apt-repository 'deb https://repo.protonvpn.com/debian unstable main'
+sudo apt-get update
+sudo apt-get install protonvpn
+
+echo Enable ufw and start logging
 sudo ufw enable
 sudo ufw enable logging
 
-#echo #swervin - installing openvpn #
-#sudo apt-get install network-manager-openvpn network-manager network-manager-gnome network-manager-openvpn-gnome
-#sudo service network-manager restart
-
-echo #swervin - display hidden startup applications#
+echo Display hidden startup applications
 sudo sed -i "s/NoDisplay=true/NoDisplay=false/g" /etc/xdg/autostart/*.desktop
 echo #done#
-
-#echo #swervin - changing swappiness#
-#echo ###current value###
-#cat /proc/sys/vm/swappiness
-#echo ###changing it to 10###
-#sudo sysctl vm.swappiness=10
-#echo ###to change this permanently add vm.swappiness=10 to the bottom###
-#sudo gedit /etc/sysctl.conf
-#sleep 5s
-
-echo #swervin - updating to finish removing and updating#
-sudo apt-get update
-sudo apt-get upgrade
-sudo apt-get dist-upgrade
-
-uname-a
-w
 
 sudo reboot
