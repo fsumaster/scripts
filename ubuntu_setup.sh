@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "#############################################################"
 echo "#          FSUMASTER - [Ubuntu]-setup script - v2.2        #"
-echo "#             tested on Ubuntu 22.04 LTS                    #"
+echo "#             tested on Ubuntu 24.04 LTS                    #"
 echo "#############################################################"
 echo "\"free your mind and your ass will follow\""
 
